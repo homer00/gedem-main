@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>172</x>
+      <y>140</y>
+      <w>56</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>*Package "model"*
+--
+
+Creneau
+Formation
+Personne
+Stagiaire
+Role
+bg=light_gray
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>376</y>
+      <w>148</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>*Classe "Formation"*
+--
+-int idFormation
+-String intituleFormation
+-Date debutFormation
+-Date finFormation
+--
+*Constructeur*
++Formation(int idf, String ifor, Date df, Date ff)
+*Méthodes*
++int getIdFormation()
++void setIdFormation(int idFormation)
++String getIntituleFormation()
++void SetIntituleFormation(String intituleFormation)
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>172</x>
+      <y>196</y>
+      <w>148</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>*Classe "Personne"*
+--
+- int idPersonne
+- int idRole
+- String nom
+- String prenom
+- String mail
+- String tel
+- String login
+- String password
+--
+*Constructeur principal*
++Personne(int idRole, String n, String p,
+   String m, String t, String login, String password)
+*Méthodes principales (getters)*
++String getIdPersonne()
++String getNom()
++String getPrenom()
++String getMail()
++String getTel()
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>368</y>
+      <w>148</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>*Classe "Role"*
+--
+# int idRole
+# String nomRole
+# ControlConnection ccr
+# static Vector&lt;String&gt; vectorRole
+--
+*Constructeurs*
++role(int id, String n)
++role()
+*Méthodes*
++Vector&lt;String&gt;listerRole()
++int getIdRole
++void setIdRole(int idRole)
++ControlConnection getCcr()
++void setCcr(ControlConnection ccr)
++Vector&lt;String&gt; getVectorRole()
++void setVectorRole(Vector&lt;String&gt; vectorRole)
+
+bg=#eaeeaa
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>180</y>
+      <w>148</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>*Classe "Creneau"*
+--
+-int idCreneau
+-Date dateCreneau
+-int am_pm
+-String heureDebut
+-String heureFin
+-Date duree
++static String dureeStr
++static String heureDebut_matin
++static String heureDebut_aprem
++static String heure_Fin_aprem
+--
+*Constructeur*
++Creneau(Date dateCreneau, String heureDebut,
+  String heureFin, Date duree)
+*Méthodes (accesseurs)*
++int getIdCreneau()
++int getIdMatiere()
++Date getDateCreneau()
++void SetHeureDebut(String heureDebut)
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>300</y>
+      <w>148</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>*Classe "Stagiaire"*
+--
+- int idStagiaire
+- int idPersonne
+--
+*Constructeurs*
++Stagiaire(int idPersonne)
++Stagiaire(int idStagiaire, int idPersonne)
+*Méthodes principales (getters)*
++String getIdStagiaire()
++String getIdPersonne()
+bg=#aacc99
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>404</y>
+      <w>148</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>*Classe "Formateur"*
+--
+- int idFormateur
+- int idPersonne
+--
+*Constructeurs*
++Formateur(int idPersonne)
++Formateur(int idFormateur, int idPersonne)
+*Accesseurs*
++int getIdFormateur()
++int getIdPersonne()
+bg=#aacc99
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>180</y>
+      <w>148</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>*Classe "Administratif"*
+--
+- int idAdministratif
+- int idPersonne
+- String fonction
+--
+*Constructeurs*
++Administratif(int idPersonne)
++Administratif(int idAdministratif, int idPersonne, String fonction)
+*Accesseurs*
++void setIdPersonne(int sip)
++int getIdAdministratif()
++int getIdPersonne()
++String getFonction()
++void setFonction(String fonction)
+bg=#aacc99
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>316</x>
+      <y>224</y>
+      <w>52</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>316</x>
+      <y>256</y>
+      <w>52</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>316</x>
+      <y>316</y>
+      <w>52</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>236</x>
+      <y>316</y>
+      <w>20</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=n
+m2=1
+</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>524</x>
+      <y>244</y>
+      <w>100</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>*Df_formateur_formation*
+--
+-int idFormateur_Formation
+-int idFormateur
+-int idFormation
+--
+*Constructeur*
++Df_formateur_formation(int idff,
+  int idf1, int idf2)
+bg=#a48822</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>524</x>
+      <y>152</y>
+      <w>100</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>*Df_stagiaire_formation*
+--
+-int idStagiaire_Formation
+-int idStagiaire
+-int idFormation
+--
+*Constructeur*
++Df_stagiaire_formation(int idsf,
+  int ids, int idf)
+
+bg=#a48822</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>308</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>*Df_formateur_matiere*
+--
+-int idFormateur_Matiere
+-int idFormateur
+-int idMatiere
+--
+*Constructeur*
++Df_formateur_matiere(int idfm,
+  int idf, int idm)
+bg=#a48822</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
